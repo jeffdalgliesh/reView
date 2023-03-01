@@ -8,3 +8,4 @@ According to the EPA, there are over 3 million abandoned oil and gas wells in th
 Using updated well plugging costs leads to a range of $300 - $435 billion to reclaim all the abandoned wells across the USA, according to the US Government Accountability Office. It’s a huge amount of money.
 
 https://www.forbes.com/sites/ianpalmer/2022/08/30/fed-money-comes-to-re-plug-abandoned-wells-in-usa/?sh=1b49cb4d5385
+
