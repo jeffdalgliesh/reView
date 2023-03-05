@@ -11,18 +11,16 @@ df_list = []
 for filename in os.listdir(datadir_path):
     # Check if the file is a CSV file
     if filename.endswith('.csv'):
-        print(filename)
         # Read the CSV file into a data frame
         file_path = os.path.join(datadir_path, filename)
         df = pd.read_csv(file_path)
         # Append the data frame to the list
         df_list.append(df)
-
 # Concatenate all data frames in the list into a single data frame
 combined_df = pd.concat(df_list, ignore_index=True)
-# group by the column 'nameWell' and count the number of rows in each group
-grouped = combined_df.groupby('nameWell').size()
-#write the nameWell to a neo4j database
-print (grouped)
-driver = GraphDatabase.driver("neo4j://71da7f31.databases.neo4j.io:7687", auth=("neo4j", "aSFA8gQAv7DAllGUyQ6JpSRvZ6scBtnqIoLfS5n0t98"))
+# for every row in the dataframe, print the value of the column 'nameWell'  
+for index, row in combined_df.iterrows():
+    print("MERGE (w:Well {name: '" + row['nameWell'] + "'})")
+    print("MERGE (c:comment {name: '" + row['comments'] + "'})")
+
 
