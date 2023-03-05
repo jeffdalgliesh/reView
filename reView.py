@@ -3,7 +3,7 @@ import os
 import pandas as pd
 
 # Define the path to the subdirectory
-subdir_path = '/Equinor/'
+subdir_path = '/Users/jeff/Library/Mobile Documents/com~apple~CloudDocs/reView/reView/Equinor/'
 
 # Create an empty list to hold the data frames for each file
 df_list = []
@@ -20,6 +20,12 @@ for filename in os.listdir(subdir_path):
 
 # Concatenate all data frames in the list into a single data frame
 combined_df = pd.concat(df_list, ignore_index=True)
-# Print the combined data frame
-print(combined_df)
+# group by the column 'nameWell' and count the number of rows in each group
+grouped = combined_df.groupby('nameWell').size()
+#write the 
+
+
+
+
+
 
